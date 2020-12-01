@@ -1,7 +1,7 @@
 <template>
   <transition :name="transition">
     <div v-show="visible">
-      Index: {{ index }}
+      
       <slot></slot>
     </div>
   </transition>
@@ -16,7 +16,10 @@ export default {
   },
   computed: {
     transition (){
-        return 'slide-' + this.$parent.direction
+        if (this.$parent.direction) {
+             return 'slide-' + this.$parent.direction
+        }
+       
     },
     visible() {
       return this.index === this.$parent.index;
@@ -24,7 +27,7 @@ export default {
   }
 };
 </script>
-
+<style src="./todos.css"></style>
 <style>
   .slide-right-enter-active{
     animation: slideRightIn .5s;
