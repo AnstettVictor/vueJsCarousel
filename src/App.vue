@@ -7,6 +7,7 @@
       </carousel-slide>
     </carousel>
     <button @click="addSlide">Ajouter un slide</button>
+    <button @click="removeSlide">Supprimer un slide</button>
   </div>
 </template>
 
@@ -23,6 +24,9 @@ export default {
   methods: {
     addSlide() {
       this.slides++
+    },
+    removeSlide() {
+      this.slides--
     }
   },
   components: {
