@@ -1,28 +1,37 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
-    <HelloWorld/>
+  <div>
+    <carousel>
+
+      <carousel-slide>
+        salut les gens
+      </carousel-slide>
+
+      <carousel-slide>
+        au revoir les gens
+      </carousel-slide>
+    </carousel>
+
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld'
+import Carousel from './components/carousel/Carousel'
+import CarouselSlide from './components/carousel/CarouselSlide'
 
 export default {
-  name: 'App',
+  data () {
+    return {
+      slides: 5,
+      
+    }
+  },
+  methods: {
+    
+  },
   components: {
-    HelloWorld
+    Carousel,
+    CarouselSlide
   }
 }
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
