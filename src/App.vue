@@ -4,10 +4,12 @@
 
       <carousel-slide>
         salut les gens
+        <img src="https://picsum.photos/id/1/630/300">
       </carousel-slide>
 
       <carousel-slide>
         au revoir les gens
+        <img src="https://picsum.photos/id/2/630/300">
       </carousel-slide>
     </carousel>
 
