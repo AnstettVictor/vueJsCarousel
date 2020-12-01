@@ -1,8 +1,8 @@
 <template>
     <div class="carousel"> 
         <slot></slot>
-        <button class="carousel__nav carousel__next" @click="next">Suivante</button>
-        <button class="carousel__nav carousel__prev" @click="prev">Précédente</button>
+        <button class="carousel__nav carousel__next" @click="next"></button>
+        <button class="carousel__nav carousel__prev" @click="prev"></button>
     </div>
 </template>
 
@@ -13,7 +13,8 @@ export default {
        
         return {
             index: 0,
-            slides: []
+            slides: [],
+            direction: null
         }
     },
     computed: {
@@ -30,12 +31,14 @@ export default {
     methods: {
         next () {
             this.index++
+            this.direction = 'right'
             if (this.index >= this.slidesCount) {
                 this.index = 0
             }
         },
         prev () {
             this.index--
+            this.direction = 'left'
             if (this.index < 0) {
                 this.index = this.slidesCount - 1
             }
